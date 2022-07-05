@@ -23,7 +23,7 @@ jobs:
         shell: bash
         id: environments
         run: |
-          echo "::set-output name=API::$(echo $secrets.API_IMAGE_NAME)"
+          echo "::set-output name=API::$(echo ${{secrets.API_IMAGE_NAME}})"
 
       - name: Run a multi-line script
         run: |
