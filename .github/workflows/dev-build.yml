@@ -17,7 +17,7 @@ jobs:
         shell: bash
         id: environments
         run: |
-          echo "::set-output name=MAGENTO_URL::$(echo ${NAME})"
+          echo "::set-output name=PYLOT_ENVID::$(echo ${NAME})"
 
       - name: Print values
         run: echo ${NAME}
