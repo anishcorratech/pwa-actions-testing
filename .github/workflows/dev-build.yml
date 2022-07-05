@@ -14,3 +14,6 @@ jobs:
     steps:
       - name: Print values
         run: echo ${NAME}
+
+      - name: list files
+        run: ls -liFh
