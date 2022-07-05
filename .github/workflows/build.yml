@@ -2,14 +2,15 @@ name: build
 
 on:
   push:
-    branches: [ "main" ]
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
     environment:
       name: dev
+      url: https://www.google.com/
     steps:
     
       - name: Cloning the code
@@ -20,5 +21,5 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          echo $api_image_name
+          echo $API_IMAGE_NAME
           echo $FE_IMAGE_NAME
