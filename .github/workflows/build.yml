@@ -28,5 +28,6 @@ jobs:
         env:
           MY_API: ${{secrets.API_IMAGE_NAME}}
           MY_FE: ${{secrets.FE_IMAGE_NAME}}
+        run: |
           echo ${{MY_API}}
           echo ${{MY_FE}}
