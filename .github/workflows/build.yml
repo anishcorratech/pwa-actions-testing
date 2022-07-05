@@ -21,13 +21,10 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          echo ${{secrets.API_IMAGE_NAME}} >> secrets.txt
-          echo ${{secrets.FE_IMAGE_NAME}} >> secrets.txt
+          echo ${{MY_API}} >> secrets.txt
+          echo ${{MY_FE}} >> secrets.txt
           cat secrets.txt
         shell: bash
         env:
           MY_API: ${{secrets.API_IMAGE_NAME}}
           MY_FE: ${{secrets.FE_IMAGE_NAME}}
-        run: |
-          echo ${{MY_API}}
-          echo ${{MY_FE}}
