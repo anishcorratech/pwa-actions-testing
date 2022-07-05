@@ -18,6 +18,12 @@ jobs:
 
       - name: Start Build
         run: echo "Starting Image Build on dev"
+        
+      - name: Configure Secrets
+        shell: bash
+        id: environments
+        run: |
+          echo "::set-output name=API::$(echo $secrets.API_IMAGE_NAME)"
 
       - name: Run a multi-line script
         run: |
