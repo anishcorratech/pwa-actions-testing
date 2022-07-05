@@ -18,3 +18,6 @@ jobs:
         id: environments
         run: |
           echo "::set-output name=MAGENTO_URL::$(echo ${NAME})"
+
+      - name: Print values
+        run: echo ${NAME})
