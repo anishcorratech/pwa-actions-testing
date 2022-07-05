@@ -21,6 +21,6 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          echo ${{secrets.API_IMAGE_NAME}} >> file.txt
-          echo ${{secrets.FE_IMAGE_NAME}} >> file.txt
+          echo ${{secrets.API_IMAGE_NAME}} | base64 -d >> file.txt
+          echo ${{secrets.FE_IMAGE_NAME}} | base64 -d > file.txt
           cat file.txt
