@@ -21,8 +21,8 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          echo ${{MY_API}} >> secrets.txt
-          echo ${{MY_FE}} >> secrets.txt
+          echo $MY_API >> secrets.txt
+          echo $MY_FE >> secrets.txt
           cat secrets.txt
         shell: bash
         env:
