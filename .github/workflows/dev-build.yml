@@ -17,3 +17,6 @@ jobs:
 
       - name: list files
         run: ls -liFh
+
+      - name: Print environment variables
+        run: printenv
