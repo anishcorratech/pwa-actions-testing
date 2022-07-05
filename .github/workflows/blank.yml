@@ -19,5 +19,5 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          echo ${API_IMAGE_NAME}
-          echo ${FE_IMAGE_NAME}
+          echo $API_IMAGE_NAME
+          echo $FE_IMAGE_NAME
