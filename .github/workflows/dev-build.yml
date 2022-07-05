@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NAME: dev
-      
+    steps:
       - name: Print values
         run: echo ${NAME}
