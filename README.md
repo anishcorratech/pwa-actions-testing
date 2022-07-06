@@ -1,6 +1,9 @@
 # pwa-actions-testing
 PWA Actions Testing
 
+[![dev-build](https://github.com/anishcorratech/pwa-actions-testing/actions/workflows/dev-build.yml/badge.svg)](https://github.com/anishcorratech/pwa-actions-testing/actions/workflows/dev-build.yml) 
+[![stage-build](https://github.com/anishcorratech/pwa-actions-testing/actions/workflows/stage-build.yml/badge.svg)](https://github.com/anishcorratech/pwa-actions-testing/actions/workflows/stage-build.yml)
+
 # Helps
 
 ## Actions 
