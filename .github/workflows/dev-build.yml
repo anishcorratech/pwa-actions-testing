@@ -9,6 +9,7 @@ jobs:
   build:
     name: build
     runs-on: ubuntu-latest
+    environment: dev
     env:
       NAME: dev
       ECR_REGION: "us-east-1"
