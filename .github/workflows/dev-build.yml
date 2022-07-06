@@ -22,15 +22,12 @@ jobs:
         run: |
           sudo apt update && sudo apt install -y jq
 
-      - name: Configuring the Environment
+      - name: Loging in to Webscale ${NAME} ECR
         run: |
           echo "Configure AWS CLI Profile for user/webscalebuilder USER"
           export AWS_ACCESS_KEY_ID=${{secrets.AWS_KEY}}
           export AWS_SECRET_ACCESS_KEY=${{secrets.AWS_SECRET}}
           export AWS_DEFAULT_REGION=${ECR_REGION}
-          
-      - name: Loging in to Webscale ${NAME} ECR
-        run: |
           aws ecr get-login-password --region $ECR_REGION | docker login --username AWS --password-stdin $ECR_REGISTRY_WEBSCALE
           
       - name: Creating Docker Image for ${NAME} 
@@ -41,6 +38,9 @@ jobs:
           
       - name: Pushing the Docker Image to ${NAME} ECR
         run: |
+          export AWS_ACCESS_KEY_ID=${{secrets.AWS_KEY}}
+          export AWS_SECRET_ACCESS_KEY=${{secrets.AWS_SECRET}}
+          export AWS_DEFAULT_REGION=${ECR_REGION}
           docker tag ${ECR_REPOSITORY_NAME_WEBSCALE}:latest ${ECR_REGISTRY_WEBSCALE}/${ECR_REPOSITORY_NAME_WEBSCALE}:${TAG}
           #docker push $ECR_REGISTRY_WEBSCALE/${ECR_REPOSITORY_NAME_WEBSCALE}:${TAG}
           
